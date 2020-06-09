@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Travel Healthy - Fahrul Rozzy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/botui/build/botui.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/botui/build/botui-theme-default.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/vue/latest/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/botui/build/botui.js"></script>
+
+    <div id="Halaman">
+
+        <div class="judul">
+            <h2><b>Travel Healthy Assistant</b></h2> <br>
+            <p>Aplikasi penuntun arah jalan ke tempat kesehatan <br>
+                Apotek, Puskesmas dan Rumah Sakit daerah Subang. <br> <br>
+                Mari kita lawan COVID-19 <br>
+                Tetap jaga kesehatan :)</p>
+
+
+
+        </div>
+
+        <div class="botui-app-container" id="botui-app">
+
+            <bot-ui></bot-ui>
+
+
+
+
+            <script>
+                const chitchat = {
+                    loadingIndex: null,
+
+                    input: {},
+
+                    init: function () {
+                        this.botui = new BotUI('botui-app');
+
+                        this.start();
+
+
+                    },
+
+
+                    //------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+                    //------------------------------------------ APOTEK -> Apotek Rakha Cisalak -------------------------------------------- DONE //
+
+
+                    //----------Step by step Perjalanan Kapuknahun ke Apotek Rakha Cisalak pakai angkot-------------------//
+                    angkotkpn_apt_rakha: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kapuknahun ke Apotek Rakha Cisalak menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Carilah Angkutan Umum dengan jurusan Cicaheum - Cileunyi menuju ke arah terminal Cicaheum. Lalu berhenti di terminal Cicaheum dan naik angkutan umum dengan jurusan  Cibeureum - Cicaheum menuju Cibeureum dan akan melewati Alun-alun Kota Bandung  (Perkiraan Waktu 2 jam). Biaya : Rp. 21.000. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu para pendatang dengan menambahakan spot-spot terbaru agar tidak tersesat :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Kapuknahun ke Apotek Rakha Cisalak pakai motor-------------------//
+                    mtrkpn_apt_rakha: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kapuknahun ke Apotek Rakha Cisalak menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_rakha.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya Cisalak <br>Belok ke arah kiri menuju pasar Cisalak <br>Sesudah sampai di Cisalak silahkan menepi di pasar Cisalak di arah sebrang<br>Apotek Rakha berada di depan pasar Cisalak<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: 'Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Apotek+Rakha+2/@-6.716331,107.7613733,17z/data=!4m5!3m4!1s0x2e69212aab47d341:0x2e3801f97917a2f7!8m2!3d-6.716629!4d107.763573"> Arah ke Apotek Rakha Cisalak <a/>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Kapuknahun ke Apotek Rakha Cisalak Kategori naik umum atau motor----------------------------//
+                    kpn_apt_rakha: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrkpn'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotkpn'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrkpn':
+                                                this.mtrkpn_apt_rakha();
+                                                break;
+                                            case 'angkotkpn':
+                                                this.angkotkpn_apt_rakha();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+
+                    //---------- tempat user menuju ke apotek rakha cisalak-----------------------//
+                    apt_rakha: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Dimana sekarang anda berada?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Kapuknahun',
+                                            value: 'kpn_apt_rakha'
+                                        },
+                                        {
+                                            text: 'Gardusayang',
+                                            value: 'gardu_apt_rakha'
+
+                                        },
+                                        {
+                                            text: 'Limaratus',
+                                            value: 'lima_apt_rakha'
+
+                                        },
+                                        {
+                                            text: 'Kasomalang',
+                                            value: 'ksm_apt_rakha'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'kpn_apt_rakha':
+                                                this.kpn_apt_rakha();
+                                                break;
+                                            case 'gardu_apt_rakha':
+                                                this.gardu_apt_rakha();
+                                                break;
+                                            case 'lima_apt_rakha':
+                                                this.lima_apt_rakha();
+                                                break;
+                                            case 'ksm_apt_rakha':
+                                                this.ksm_apt_rakha();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+
+
+
+                    //------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+
+                    //  Kategori -----------------------------------------------------------------// 
+
+                    apotek: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Inilah tempat apotek terdekat yang sering dikunjungi oleh masyarakat. Silahkan pilih :'
+
+                        })
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Apotek Rakha Cisalak',
+                                            value: 'apt_rakha'
+                                        },
+                                        {
+                                            text: 'Apotek Sejahtera Cisalak',
+                                            value: 'apt_sejaktera'
+
+                                        },
+                                        {
+                                            text: 'Apotek Jaya Farma Kasomalang',
+                                            value: 'apt_jayafarma1'
+
+                                        },
+                                        {
+                                            text: 'Apotek Jaya Farma 2 Kasomalang',
+                                            value: 'apt_jayafarma2'
+
+                                        }
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'apt_rakha':
+                                                this.apt_rakha();
+                                                break;
+                                            case 'apt_sejaktera':
+                                                this.apt_sejaktera();
+                                                break;
+                                            case 'apt_jayafarma1':
+                                                this.apt_jayafarma1();
+                                                break;
+                                            case 'apt_jayafarma2':
+                                                this.apt_jayafarma2();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+                    },
+
+
+                    puskesmas: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Inilah tempat puskesmas terdekat yang sering dikunjungi oleh masyarakat. Silahkan pilih :'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Puskesmas Cisalak',
+                                            value: 'pus_cisalak'
+                                        },
+                                        {
+                                            text: 'Puskesmas Kasomalang',
+                                            value: 'pus_kasomalang'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'pus_cisalak':
+                                                this.pus_cisalak();
+                                                break;
+                                            case 'pus_kasomalang':
+                                                this.pus_kasomalang();
+                                                break;
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+                    },
+
+
+                    rumahsakit: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Inilah tempat rumah sakit terdekat yang sering dikunjungi oleh masyarakat. Silahkan pilih :'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Rumah Sakit Ciereng Subang',
+                                            value: 'rs_ciereng'
+                                        },
+                                        {
+                                            text: 'Rumah Sakit PTPN Subang',
+                                            value: 'rs_ptpn'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'rs_ciereng':
+                                                this.rs_ciereng();
+                                                break;
+                                            case 'rs_ptpn':
+                                                this.rs_ptpn();
+                                                break;
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+                    },
+
+
+
+                    //------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+                    //--------------Home Chat -------------------------------------------//
+
+                    start: function () {
+                        this.botui.message.bot({
+                            delay: 1000,
+                            loading: true,
+                            content: 'Hai Saya adalah Travel Healthy Assistant'
+                        })
+
+                        this.botui.message.bot({
+                            delay: 1000,
+                            loading: true,
+                            content: 'Yang akan membantu kamu memberi petunjuk jalan ke tempat kesehatan dengan mudah'
+                        })
+
+                            .then(() => {
+                                return this.botui.message.bot({
+                                    delay: 1000,
+                                    content: 'Siapa nama kamu?'
+                                });
+                            })
+
+                            .then(() => {
+                                return this.botui.action.text({
+                                    delay: 400,
+                                    action: {
+                                        size: 18,
+                                        sub_type: 'text',
+                                        placeholder: 'Masukan Nama'
+                                    }
+                                });
+                            })
+
+                            .then(res => {
+                                this.input.name = res.value;
+                                this.botui.message.add({
+
+                                    content: 'Hai ' + this.input.name
+                                });
+                            })
+
+                            .then(() => {
+                                return this.botui.message.bot({
+                                    delay: 1000,
+                                    loading: true,
+                                    content: 'Pilih apa yang kamu butuhkan'
+                                });
+                            })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Apotek',
+                                            value: 'apotek'
+                                        },
+                                        {
+                                            text: 'Puskesmas',
+                                            value: 'puskesmas'
+                                        },
+                                        {
+                                            text: 'Rumah Sakit',
+                                            value: 'rumahsakit'
+                                        },
+
+                                    ]
+
+                                });
+                            })
+
+
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'apotek':
+                                                this.apotek();
+                                                break;
+                                            case 'puskesmas':
+                                                this.puskesmas();
+                                                break;
+                                            case 'rumahsakit':
+                                                this.rumahsakit();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+
+
+
+                            });
+
+
+
+                    }
+                };
+
+
+                chitchat.init();
+
+
+
+
+            </script>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
