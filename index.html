@@ -68,13 +68,19 @@
                         this.botui.message.add({
                             delay: 200,
                             loading: true,
-                            content: 'Carilah Angkutan Umum dengan jurusan Cicaheum - Cileunyi menuju ke arah terminal Cicaheum. Lalu berhenti di terminal Cicaheum dan naik angkutan umum dengan jurusan  Cibeureum - Cicaheum menuju Cibeureum dan akan melewati Alun-alun Kota Bandung  (Perkiraan Waktu 2 jam). Biaya : Rp. 21.000. '
-
+                            type: 'html',
+                            content: '<img src="img/apotek_rakha.png" id="gambar">'
                         })
                         this.botui.message.add({
                             delay: 200,
                             loading: true,
-                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu para pendatang dengan menambahakan spot-spot terbaru agar tidak tersesat :)'
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya Cisalak <br>Tunggu dan menaiki Angkutan Umum berwarna biru ke arah Cisalak<br>Berhenti di pasar Cisalak silahkan menyebrang ke pasar Cisalak di arah sebrang<br>Apotek Rakha berada di depan pasar Cisalak <br><br>Estimasi waktu    : 15 menit <br>Estimasi biaya   : Rp.2000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
 
                         })
 
@@ -99,7 +105,7 @@
                             delay: 200,
                             loading: true,
                             type: 'html',
-                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya Cisalak <br>Belok ke arah kiri menuju pasar Cisalak <br>Sesudah sampai di Cisalak silahkan menepi di pasar Cisalak di arah sebrang<br>Apotek Rakha berada di depan pasar Cisalak<h6/>'
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya Cisalak <br>Belok ke arah kiri menuju pasar Cisalak <br>Sesudah sampai di Cisalak silahkan menepi di pasar Cisalak di arah sebrang<br>Apotek Rakha berada di depan pasar Cisalak<h6/>'
                         })
                         this.botui.message.add({
                             delay: 200,
@@ -178,6 +184,386 @@
                     },
 
 
+
+                    //----------Step by step Perjalanan Gardusayang ke Apotek Rakha Cisalak pakai angkot-------------------//
+                    angkotgrd_apt_rakha: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Gardusayang ke Apotek Rakha Cisalak menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_rakha.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya Cisalak <br>Tunggu dan menaiki Angkutan Umum berwarna biru ke arah Cisalak<br>Berhenti di pasar Cisalak<br>Apotek Rakha berada di depan pasar Cisalak <br><br>Estimasi waktu    : 12 menit <br>Estimasi biaya   : Rp.2000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Gardusayang ke Apotek Rakha Cisalak pakai motor-------------------//
+                    mtrgrd_apt_rakha: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Gardusayang ke Apotek Rakha Cisalak menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_rakha.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya Cisalak <br>Belok ke arah kanan menuju pasar Cisalak <br>Sesudah sampai di Cisalak silahkan menepi ke kiri di pasar Cisalak<br>Apotek Rakha berada di depan pasar Cisalak<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: 'Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Apotek+Rakha+2/@-6.716331,107.7613733,17z/data=!4m5!3m4!1s0x2e69212aab47d341:0x2e3801f97917a2f7!8m2!3d-6.716629!4d107.763573"> Arah ke Apotek Rakha Cisalak <a/>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Gardusayang ke Apotek Rakha Cisalak Kategori naik umum atau motor----------------------------//
+                    gardu_apt_rakha: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrgrd'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotgrd'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrgrd':
+                                                this.mtrgrd_apt_rakha();
+                                                break;
+                                            case 'angkotgrd':
+                                                this.angkotgrd_apt_rakha();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //----------Step by step Perjalanan Lima ratus ke Apotek Rakha Cisalak pakai angkot-------------------//
+                    angkotlima_apt_rakha: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Lima ratus ke Apotek Rakha Cisalak menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_rakha.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya <br>Tunggu dan menaiki Angkutan Umum berwarna biru ke arah Cisalak<br>Berhenti di pasar Cisalak<br>Apotek Rakha berada di depan pasar Cisalak <br><br>Estimasi waktu    : 20 menit <br>Estimasi biaya   : Rp.4000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Lima ratus ke Apotek Rakha Cisalak pakai motor-------------------//
+                    mtrlima_apt_rakha: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Lima ratus ke Apotek Rakha Cisalak menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_rakha.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya <br>Belok ke arah kiri menuju ke arah Cisalak <br>Sesudah sampai di Cisalak silahkan menepi ke kiri dan menyebrang ke pasar Cisalak<br>Apotek Rakha berada di depan pasar Cisalak<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: 'Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Apotek+Rakha+2/@-6.716331,107.7613733,17z/data=!4m5!3m4!1s0x2e69212aab47d341:0x2e3801f97917a2f7!8m2!3d-6.716629!4d107.763573"> Arah ke Apotek Rakha Cisalak <a/>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Lima ratus ke Apotek Rakha Cisalak Kategori naik umum atau motor----------------------------//
+                    lima_apt_rakha: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrlima'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotlima'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrlima':
+                                                this.mtrlima_apt_rakha();
+                                                break;
+                                            case 'angkotlima':
+                                                this.angkotlima_apt_rakha();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //----------Step by step Perjalanan Kasomalang ke Apotek Rakha Cisalak pakai angkot-------------------//
+                    angkotksm_apt_rakha: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kasomalang ke Apotek Rakha Cisalak menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_rakha.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya ke desa kasomalang <br>Tunggu dan menaiki Angkutan Umum berwarna biru ke arah Cisalak<br>Berhenti di pasar Cisalak<br>Apotek Rakha berada di depan pasar Cisalak <br><br>Estimasi waktu    : 25 menit <br>Estimasi biaya   : Rp.5000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Kasomalang ke Apotek Rakha Cisalak pakai motor-------------------//
+                    mtrksm_apt_rakha: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kasomalang ke Apotek Rakha Cisalak menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_rakha.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya ke desa Kasomalang<br>Belok ke arah kanan menuju ke arah Cisalak <br>Sesudah sampai di Cisalak silahkan menepi ke kiri dan menyebrang ke pasar Cisalak<br>Apotek Rakha berada di depan pasar Cisalak<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: 'Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Apotek+Rakha+2/@-6.716331,107.7613733,17z/data=!4m5!3m4!1s0x2e69212aab47d341:0x2e3801f97917a2f7!8m2!3d-6.716629!4d107.763573"> Arah ke Apotek Rakha Cisalak <a/>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Kasomalang ke Apotek Rakha Cisalak Kategori naik umum atau motor----------------------------//
+                    ksm_apt_rakha: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrksm'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotksm'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrksm':
+                                                this.mtrksm_apt_rakha();
+                                                break;
+                                            case 'angkotksm':
+                                                this.angkotksm_apt_rakha();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
 
                     //---------- tempat user menuju ke apotek rakha cisalak-----------------------//
                     apt_rakha: function () {
