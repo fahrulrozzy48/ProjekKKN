@@ -1820,6 +1820,596 @@
                     },
 
 
+
+
+                    //------------------------------------------ APOTEK -> Apotek Jaya Farma 2 Kasomalang -------------------------------------------- DONE //
+
+
+                    //----------Step by step Perjalanan Kapuknahun ke Apotek Jaya Farma 2 Kasomalang pakai angkot-------------------//
+                    angkotkpn_apt_jayafarma2: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kapuknahun ke Apotek Jaya Farma 2 Kasomalang menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_jayafarma2.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya Cisalak <br>Tunggu dan menaiki Angkutan Umum berwarna biru ke arah Kasomalang<br>Melewati pasar Kasomalang<br>Melewati pertigaan jalan Kumpai dan lurus sedikit lagi<br>Apotek Jaya Farma 2 Kasomalang berada disamping Indomaret dan BRI Kasomalang<br><br>Estimasi waktu    : 25 menit <br>Estimasi biaya   : Rp.5000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Kapuknahun ke Apotek Jaya Farma 2 Kasomalang pakai motor-------------------//
+                    mtrkpn_apt_jayafarma2: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kapuknahun ke Apotek Jaya Farma 2 Kasomalang menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_jayafarma2.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya Cisalak <br>Berbelok ke kiri/kanan ke arah Kasomalang<br>Berhenti sebelum ke arah pasar Kasomalang<br>Apotek Jaya Farma 1 Kasomalang berada diantara Puskesmas Kasomalang dan Toko Buah-buahan<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Jaya+Pharma/@-6.697623,107.7347877,17z/data=!4m8!1m2!2m1!1sapotek+pharma+kasomalang!3m4!1s0x0:0xd3e8d23e659af4cd!8m2!3d-6.6976411!4d107.734827"> Arah ke Apotek Jaya Farma 2 Kasomalang <a/><h6>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Kapuknahun ke Apotek Jaya Farma 2 Kasomalang Kategori naik umum atau motor----------------------------//
+                    kpn_apt_jayafarma2: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrkpn'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotkpn'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrkpn':
+                                                this.mtrkpn_apt_jayafarma2();
+                                                break;
+                                            case 'angkotkpn':
+                                                this.angkotkpn_apt_jayafarma2();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //----------Step by step Perjalanan Gardusayang ke Apotek Jaya Farma 2 Kasomalang pakai angkot-------------------//
+                    angkotgrd_apt_jayafarma2: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Gardusayang ke Apotek Jaya Farma 2 Kasomalang menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_jayafarma2.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya <br>Tunggu dan menaiki Angkutan Umum berwarna biru ke arah Kasomalang<br>Melewati pasar Kasomalang<br>Melewati pertigaan jalan Kumpai dan lurus sedikit lagi<br>Apotek Jaya Farma 2 Kasomalang berada disamping Indomaret dan BRI Kasomalang<br><br>Estimasi waktu    : 28 menit <br>Estimasi biaya   : Rp.5000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Gardusayang ke Apotek Jaya Farma 2 Kasomalang pakai motor-------------------//
+                    mtrgrd_apt_jayafarma2: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Gardusayang ke Apotek Jaya Farma 2 Kasomalang menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_jayafarma2.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya <br>Berbelok ke kiri/kanan ke arah Kasomalang<br>Berhenti sebelum ke arah pasar Kasomalang<br>Apotek Jaya Farma 1 Kasomalang berada diantara Puskesmas Kasomalang dan Toko Buah-buahan<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Jaya+Pharma/@-6.697623,107.7347877,17z/data=!4m8!1m2!2m1!1sapotek+pharma+kasomalang!3m4!1s0x0:0xd3e8d23e659af4cd!8m2!3d-6.6976411!4d107.734827"> Arah ke Apotek Jaya Farma 2 Kasomalang <a/><h6>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Gardusayang ke Apotek Jaya Farma 2 Kasomalang Kategori naik umum atau motor----------------------------//
+                    gardu_apt_jayafarma2: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrgrd'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotgrd'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrgrd':
+                                                this.mtrgrd_apt_jayafarma2();
+                                                break;
+                                            case 'angkotgrd':
+                                                this.angkotgrd_apt_jayafarma2();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //----------Step by step Perjalanan Lima ratus ke Apotek Jaya Farma 2 Kasomalang pakai angkot-------------------//
+                    angkotlima_apt_jayafarma2: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Lima ratus ke Apotek Jaya Farma 2 Kasomalang menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_jayafarma2.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya <br>Tunggu dan menaiki Angkutan Umum berwarna biru ke arah Kasomalang<br>Melewati pasar Kasomalang<br>Melewati pertigaan jalan Kumpai dan lurus sedikit lagi<br>Apotek Jaya Farma 2 Kasomalang berada disamping Indomaret dan BRI Kasomalang<br><br>Estimasi waktu    : 18 menit <br>Estimasi biaya   : Rp.3000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Lima ratus ke Apotek Jaya Farma 2 Kasomalang pakai motor-------------------//
+                    mtrlima_apt_jayafarma2: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Lima ratus ke Apotek Jaya Farma 2 Kasomalang menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_jayafarma2.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya <br>Berbelok ke kiri/kanan ke arah Kasomalang<br>Berhenti sebelum ke arah pasar Kasomalang<br>Apotek Jaya Farma 1 Kasomalang berada diantara Puskesmas Kasomalang dan Toko Buah-buahan<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Jaya+Pharma/@-6.697623,107.7347877,17z/data=!4m8!1m2!2m1!1sapotek+pharma+kasomalang!3m4!1s0x0:0xd3e8d23e659af4cd!8m2!3d-6.6976411!4d107.734827"> Arah ke Apotek Jaya Farma 2 Kasomalang <a/><h6/>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Lima ratus ke Apotek Jaya Farma 2 Kasomalang Kategori naik umum atau motor----------------------------//
+                    lima_apt_jayafarma2: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrlima'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotlima'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrlima':
+                                                this.mtrlima_apt_jayafarma2();
+                                                break;
+                                            case 'angkotlima':
+                                                this.angkotlima_apt_jayafarma2();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //----------Step by step Perjalanan Kasomalang ke Apotek Jaya Farma 2 Kasomalang pakai angkot-------------------//
+                    angkotksm_apt_jayafarma2: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kasomalang ke Apotek Jaya Farma 2 Kasomalang menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_jayafarma2.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya <br>Tunggu dan menaiki Angkutan Umum berwarna biru ke arah pasar Kasomalang<br>Berhenti sebelum pasar Kasomalang<br><br>Apotek Jaya Farma 2 Kasomalang berada disamping Indomaret dan BRI Kasomalang<br><br>Estimasi waktu    : 7 menit <br>Estimasi biaya   : Rp.2000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Kasomalang ke Apotek Jaya Farma 2 Kasomalang pakai motor-------------------//
+                    mtrksm_apt_jayafarma2: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kasomalang ke Apotek Jaya Farma 2 Kasomalang menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/apotek_jayafarma2.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya Cisalak <br>Berbelok ke kiri/kanan ke arah pasar Kasomalang<br>Berhenti di pasar Kasomalang<br>Apotek Jaya Farma 1 Kasomalang berada diantara Puskesmas Kasomalang dan Toko Buah-buahan<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Jaya+Pharma/@-6.697623,107.7347877,17z/data=!4m8!1m2!2m1!1sapotek+pharma+kasomalang!3m4!1s0x0:0xd3e8d23e659af4cd!8m2!3d-6.6976411!4d107.734827"> Arah ke Apotek Jaya Farma 2 Kasomalang <a/><h6/>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Kasomalang ke Apotek Jaya Farma 2 Kasomalang Kategori naik umum atau motor----------------------------//
+                    ksm_apt_jayafarma2: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrksm'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotksm'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrksm':
+                                                this.mtrksm_apt_jayafarma2();
+                                                break;
+                                            case 'angkotksm':
+                                                this.angkotksm_apt_jayafarma2();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+
+                    //---------- tempat user menuju ke apotek Jaya Farma 2 Kasomalang-----------------------//
+                    apt_jayafarma2: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Dimana sekarang anda berada?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Kapuknahun',
+                                            value: 'kpn_apt_jayafarma2'
+                                        },
+                                        {
+                                            text: 'Gardusayang',
+                                            value: 'gardu_apt_jayafarma2'
+
+                                        },
+                                        {
+                                            text: 'Limaratus',
+                                            value: 'lima_apt_jayafarma2'
+
+                                        },
+                                        {
+                                            text: 'Kasomalang',
+                                            value: 'ksm_apt_jayafarma2'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'kpn_apt_jayafarma2':
+                                                this.kpn_apt_jayafarma2();
+                                                break;
+                                            case 'gardu_apt_jayafarma2':
+                                                this.gardu_apt_jayafarma2();
+                                                break;
+                                            case 'lima_apt_jayafarma2':
+                                                this.lima_apt_jayafarma2();
+                                                break;
+                                            case 'ksm_apt_jayafarma2':
+                                                this.ksm_apt_jayafarma2();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
                     //------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 
