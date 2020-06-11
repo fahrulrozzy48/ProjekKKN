@@ -2414,6 +2414,595 @@
 
 
 
+                    //------------------------------------------ PUSKESMAS -> Puskesmas Cisalak -------------------------------------------- DONE //
+
+
+                    //----------Step by step Perjalanan Kapuknahun ke Puskesmas Cisalak pakai angkot-------------------//
+                    angkotkpn_pus_cisalak: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kapuknahun ke Puskesmas Cisalak menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/puskesmas_cisalak.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya Cisalak <br>Menunggu dan naik Angkutan Umum berwarna biru menuju Alun-alun Cisalak <br>Sesudah sampai di Alun-alun Cisalak berhenti<br>Lalu berjalan 5 meter ke arah Bank BJB dan belok kiri lalu berjalan lurus 10 meter<br>Puskesmas Cisalak berada di belakang Alun-alun Cisalak<br><br>Estimasi waktu    : 18 menit <br>Estimasi biaya   : Rp.2000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Kapuknahun ke Puskesmas Cisalak pakai motor-------------------//
+                    mtrkpn_pus_cisalak: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kapuknahun ke Puskesmas Cisalak menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/puskesmas_cisalak.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya Cisalak <br>Belok ke arah kiri menuju Alun-alun Cisalak <br>Sesudah sampai di Alun-alun Cisalak silahkan belok kiri di pertigaan dekat Bank BJB<br>Melaju lurus 10 meter<br>Puskesmas Cisalak berada di belakang Alun-alun Cisalak<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Puskesmas+Cisalak/@-6.7163187,107.7633138,19z/data=!4m14!1m8!3m7!1s0x2e6926d552430535:0xa3f9d3e9ca531ee9!2sPuskesmas+Cisalak!8m2!3d-6.71632!4d107.763861!14m1!1BCgIgARICCAI!3m4!1s0x2e6926d552430535:0xa3f9d3e9ca531ee9!8m2!3d-6.71632!4d107.763861"> Arah ke Puskesmas Cisalak <a/><h6>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Kapuknahun ke Puskesmas Cisalak Kategori naik umum atau motor----------------------------//
+                    kpn_pus_cisalak: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrkpn'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotkpn'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrkpn':
+                                                this.mtrkpn_pus_cisalak();
+                                                break;
+                                            case 'angkotkpn':
+                                                this.angkotkpn_pus_cisalak();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //----------Step by step Perjalanan Gardusayang ke Puskesmas Cisalak pakai angkot-------------------//
+                    angkotgrd_pus_cisalak: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Gardusayang ke Puskesmas Cisalak menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/puskesmas_cisalak.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya <br>Menunggu dan naik Angkutan Umum berwarna biru menuju Alun-alun Cisalak <br>Sebelum ke Alun-alun Cisalak sialahkan berhenti dekat Bank BJB<br>Lalu menyebrang dan belok kanan lalu berjalan lurus 10 meter<br>Puskesmas Cisalak berada di belakang Alun-alun Cisalak<br><br>Estimasi waktu    : 15 menit <br>Estimasi biaya   : Rp.2000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Gardusayang ke Puskesmas Cisalak pakai motor-------------------//
+                    mtrgrd_pus_cisalak: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Gardusayang ke Puskesmas Cisalak menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/puskesmas_cisalak.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya <br>Belok ke arah kiri/kanan menuju Alun-alun Cisalak <br>Sesudah sampai di Alun-alun Cisalak silahkan belok kanan menyebrang di pertigaan dekat Bank BJB<br>Melaju lurus 10 meter<br>Puskesmas Cisalak berada di belakang Alun-alun Cisalak<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Puskesmas+Cisalak/@-6.7163187,107.7633138,19z/data=!4m14!1m8!3m7!1s0x2e6926d552430535:0xa3f9d3e9ca531ee9!2sPuskesmas+Cisalak!8m2!3d-6.71632!4d107.763861!14m1!1BCgIgARICCAI!3m4!1s0x2e6926d552430535:0xa3f9d3e9ca531ee9!8m2!3d-6.71632!4d107.763861"> Arah ke Puskesmas Cisalak <a/><h6>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Gardusayang ke Puskesmas Cisalak Kategori naik umum atau motor----------------------------//
+                    gardu_pus_cisalak: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrgrd'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotgrd'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrgrd':
+                                                this.mtrgrd_pus_cisalak();
+                                                break;
+                                            case 'angkotgrd':
+                                                this.angkotgrd_pus_cisalak();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //----------Step by step Perjalanan Lima ratus ke Puskesmas Cisalak pakai angkot-------------------//
+                    angkotlima_pus_cisalak: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Lima ratus ke Puskesmas Cisalak menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/puskesmas_cisalak.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya <br>Menunggu dan naik Angkutan Umum berwarna biru menuju Alun-alun Cisalak <br>Sesudah sampai di Alun-alun Cisalak berhenti<br>Lalu berjalan 5 meter ke arah Bank BJB dan belok kiri lalu berjalan lurus 10 meter<br>Puskesmas Cisalak berada di belakang Alun-alun Cisalak<br><br>Estimasi waktu    : 23 menit <br>Estimasi biaya   : Rp.4000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Lima ratus ke Puskesmas Cisalak pakai motor-------------------//
+                    mtrlima_pus_cisalak: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Lima ratus ke Puskesmas Cisalak menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/puskesmas_cisalak.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya <br>Belok ke arah kiri/kanan menuju Alun-alun Cisalak <br>Sesudah sampai di Alun-alun Cisalak silahkan belok kiri di pertigaan dekat Bank BJB<br>Melaju lurus 10 meter<br>Puskesmas Cisalak berada di belakang Alun-alun Cisalak<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Puskesmas+Cisalak/@-6.7163187,107.7633138,19z/data=!4m14!1m8!3m7!1s0x2e6926d552430535:0xa3f9d3e9ca531ee9!2sPuskesmas+Cisalak!8m2!3d-6.71632!4d107.763861!14m1!1BCgIgARICCAI!3m4!1s0x2e6926d552430535:0xa3f9d3e9ca531ee9!8m2!3d-6.71632!4d107.763861"> Arah ke Puskesmas Cisalak <a/><h6/>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Lima ratus ke Puskesmas Cisalak Kategori naik umum atau motor----------------------------//
+                    lima_pus_cisalak: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrlima'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotlima'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrlima':
+                                                this.mtrlima_pus_cisalak();
+                                                break;
+                                            case 'angkotlima':
+                                                this.angkotlima_pus_cisalak();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //----------Step by step Perjalanan Kasomalang ke Puskesmas Cisalak pakai angkot-------------------//
+                    angkotksm_pus_cisalak: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kasomalang ke Puskesmas Cisalak menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/puskesmas_cisalak.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya<br>Menunggu dan naik Angkutan Umum berwarna biru menuju Alun-alun Cisalak <br>Sesudah sampai di Alun-alun Cisalak berhenti<br>Lalu berjalan 5 meter ke arah Bank BJB dan belok kiri lalu berjalan lurus 10 meter<br>Puskesmas Cisalak berada di belakang Alun-alun Cisalak<br><br>Estimasi waktu    : 28 menit <br>Estimasi biaya   : Rp.5000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Kasomalang ke Puskesmas Cisalak pakai motor-------------------//
+                    mtrksm_pus_cisalak: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kasomalang ke Puskesmas Cisalak menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/puskesmas_cisalak.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya <br>Belok ke arah kiri menuju Alun-alun Cisalak <br>Sesudah sampai di Alun-alun Cisalak silahkan belok kiri/kanan di pertigaan dekat Bank BJB<br>Melaju lurus 10 meter<br>Puskesmas Cisalak berada di belakang Alun-alun Cisalak<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Puskesmas+Cisalak/@-6.7163187,107.7633138,19z/data=!4m14!1m8!3m7!1s0x2e6926d552430535:0xa3f9d3e9ca531ee9!2sPuskesmas+Cisalak!8m2!3d-6.71632!4d107.763861!14m1!1BCgIgARICCAI!3m4!1s0x2e6926d552430535:0xa3f9d3e9ca531ee9!8m2!3d-6.71632!4d107.763861"> Arah ke Puskesmas Cisalak <a/><h6/>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Kasomalang ke Puskesmas Cisalak Kategori naik umum atau motor----------------------------//
+                    ksm_pus_cisalak: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrksm'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotksm'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrksm':
+                                                this.mtrksm_pus_cisalak();
+                                                break;
+                                            case 'angkotksm':
+                                                this.angkotksm_pus_cisalak();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+
+                    //---------- tempat user menuju ke Puskesmas cisalak-----------------------//
+                    pus_cisalak: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Dimana sekarang anda berada?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Kapuknahun',
+                                            value: 'kpn_pus_cisalak'
+                                        },
+                                        {
+                                            text: 'Gardusayang',
+                                            value: 'gardu_pus_cisalak'
+
+                                        },
+                                        {
+                                            text: 'Limaratus',
+                                            value: 'lima_pus_cisalak'
+
+                                        },
+                                        {
+                                            text: 'Kasomalang',
+                                            value: 'ksm_pus_cisalak'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'kpn_pus_cisalak':
+                                                this.kpn_pus_cisalak();
+                                                break;
+                                            case 'gardu_pus_cisalak':
+                                                this.gardu_pus_cisalak();
+                                                break;
+                                            case 'lima_pus_cisalak':
+                                                this.lima_pus_cisalak();
+                                                break;
+                                            case 'ksm_pus_cisalak':
+                                                this.ksm_pus_cisalak();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+
 
 
                     //------------------------------------------------------------------------------------------------------------------------------------------------------------------//
