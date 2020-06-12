@@ -3598,6 +3598,599 @@
 
 
 
+                    //------------------------------------------ RUMAH SAKIT -> Rumah Sakit Ciereng Subang -------------------------------------------- DONE //
+
+
+                    //----------Step by step Perjalanan Kapuknahun ke Rumah Sakit Ciereng Subang pakai angkot-------------------//
+                    angkotkpn_rs_ciereng: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kapuknahun ke Rumah Sakit Ciereng Subang menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/rs_ciereng.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya Cisalak <br>Menunggu dan naik Angkutan Umum berwarna biru-putih jurusan Subang-Tanjung Siang menuju Subang<br>Berhenti di Wisma Subang<br>Lalu berjalan ke arah kiri menuju Halte dekat GO(Ganesha Operation) <br>Menaiki Angkutan Umum berwarna hijau-oren jurusan Kalijati-Puwodadi menuju Rumah Sakit Ciereng<br>Dan sampailah di Rumah Sakit Ciereng Subang<br><br>Estimasi waktu    : 1 jam 20 menit <br>Estimasi biaya   : Rp.20.000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Kapuknahun ke Rumah Sakit Ciereng Subang pakai motor-------------------//
+                    mtrkpn_rs_ciereng: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kapuknahun ke Rumah Sakit Ciereng Subang menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/rs_ciereng.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya Cisalak <br>Belok ke arah kanan menuju Kasomalang <br>Ada 2 Jalur: Jalan Cagak dan Kumpay<br>Jika melewati jalur Jalan Cagak hanya lurus saja dan jika bertemu Tugu Nanas silahkan belok ke kanan ke arah Subang<br>Jika melewati Jalan Kumpay hanya belok kiri dan lurus saja sampai tiba di Sekolah As-Syifa Boarding School lalu belok kiri ke arah Subang<br>Lurus saja sampai di tiba di Wisma Subang<br>Lalu belok kiri dan lurus saja menuju Dangdeur<br>Jika ada pertigaan ke arah Dangdeur hanya lurus saja ke arah Kalijati<br>Lurus 30 meter dan sampai di Rumah Sakit Ciereng Subang<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Rsud+ciereng/@-6.5581409,107.7449493,17z/data=!3m1!4b1!4m5!3m4!1s0x2e693d7c4e6dae3d:0x8df809045e97aa89!8m2!3d-6.5581409!4d107.747138"> Arah ke Rumah Sakit Ciereng Subang <a/><h6>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Kapuknahun ke Rumah Sakit Ciereng Subang Kategori naik umum atau motor----------------------------//
+                    kpn_rs_ciereng: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrkpn'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotkpn'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrkpn':
+                                                this.mtrkpn_rs_ciereng();
+                                                break;
+                                            case 'angkotkpn':
+                                                this.angkotkpn_rs_ciereng();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //----------Step by step Perjalanan Gardusayang ke Rumah Sakit Ciereng Subang pakai angkot-------------------//
+                    angkotgrd_rs_ciereng: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Gardusayang ke Rumah Sakit Ciereng Subang menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/rs_ciereng.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya <br>Menunggu dan naik Angkutan Umum berwarna biru-putih jurusan Subang-Tanjung Siang menuju Subang<br>Berhenti di Wisma Subang<br>Lalu berjalan ke arah kiri menuju Halte dekat GO(Ganesha Operation) <br>Menaiki Angkutan Umum berwarna hijau-oren jurusan Kalijati-Puwodadi menuju Rumah Sakit Ciereng<br>Dan sampailah di Rumah Sakit Ciereng Subang<br><br>Estimasi waktu    : 1 jam 30 menit <br>Estimasi biaya   : Rp.20.000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Gardusayang ke Rumah Sakit Ciereng Subang pakai motor-------------------//
+                    mtrgrd_rs_ciereng: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Gardusayang ke Rumah Sakit Ciereng Subang menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/rs_ciereng.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya <br>Belok ke arah kiri/kanan menuju Kasomalang <br>Ada 2 Jalur: Jalan Cagak dan Kumpay<br>Jika melewati jalur Jalan Cagak hanya lurus saja dan jika bertemu Tugu Nanas silahkan belok ke kanan ke arah Subang<br>Jika melewati Jalan Kumpay hanya belok kiri dan lurus saja sampai tiba di Sekolah As-Syifa Boarding School lalu belok kiri ke arah Subang<br>Lurus saja sampai di tiba di Wisma Subang<br>Lalu belok kiri dan lurus saja menuju Dangdeur<br>Jika ada pertigaan ke arah Dangdeur hanya lurus saja ke arah Kalijati<br>Lurus 30 meter dan sampai di Rumah Sakit Ciereng Subang<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Rsud+ciereng/@-6.5581409,107.7449493,17z/data=!3m1!4b1!4m5!3m4!1s0x2e693d7c4e6dae3d:0x8df809045e97aa89!8m2!3d-6.5581409!4d107.747138"> Arah ke Rumah Sakit Ciereng Subang <a/><h6>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Gardusayang ke Rumah Sakit Ciereng Subang Kategori naik umum atau motor----------------------------//
+                    gardu_rs_ciereng: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrgrd'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotgrd'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrgrd':
+                                                this.mtrgrd_rs_ciereng();
+                                                break;
+                                            case 'angkotgrd':
+                                                this.angkotgrd_rs_ciereng();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //----------Step by step Perjalanan Lima ratus ke Rumah Sakit Ciereng Subang pakai angkot-------------------//
+                    angkotlima_rs_ciereng: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Lima ratus ke Rumah Sakit Ciereng Subang menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/rs_ciereng.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya <br>Menunggu dan naik Angkutan Umum berwarna biru-putih jurusan Subang-Tanjung Siang menuju Subang<br>Berhenti di Wisma Subang<br>Lalu berjalan ke arah kiri menuju Halte dekat GO(Ganesha Operation) <br>Menaiki Angkutan Umum berwarna hijau-oren jurusan Kalijati-Puwodadi menuju Rumah Sakit Ciereng<br>Dan sampailah di Rumah Sakit Ciereng Subang<br><br>Estimasi waktu    : 1 jam 8 menit <br>Estimasi biaya   : Rp.20.000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Lima ratus ke Rumah Sakit Ciereng Subang pakai motor-------------------//
+                    mtrlima_rs_ciereng: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Lima ratus ke Rumah Sakit Ciereng Subang menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/rs_ciereng.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya <br>Belok ke arah kiri/kanan menuju Kasomalang <br>Ada 2 Jalur: Jalan Cagak dan Kumpay<br>Jika melewati jalur Jalan Cagak hanya lurus saja dan jika bertemu Tugu Nanas silahkan belok ke kanan ke arah Subang<br>Jika melewati Jalan Kumpay hanya belok kiri dan lurus saja sampai tiba di Sekolah As-Syifa Boarding School lalu belok kiri ke arah Subang<br>Lurus saja sampai di tiba di Wisma Subang<br>Lalu belok kiri dan lurus saja menuju Dangdeur<br>Jika ada pertigaan ke arah Dangdeur hanya lurus saja ke arah Kalijati<br>Lurus 30 meter dan sampai di Rumah Sakit Ciereng Subang<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Rsud+ciereng/@-6.5581409,107.7449493,17z/data=!3m1!4b1!4m5!3m4!1s0x2e693d7c4e6dae3d:0x8df809045e97aa89!8m2!3d-6.5581409!4d107.747138"> Arah ke Rumah Sakit Ciereng Subang <a/><h6/>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Lima ratus ke Rumah Sakit Ciereng Subang Kategori naik umum atau motor----------------------------//
+                    lima_rs_ciereng: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrlima'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotlima'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrlima':
+                                                this.mtrlima_rs_ciereng();
+                                                break;
+                                            case 'angkotlima':
+                                                this.angkotlima_rs_ciereng();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+                    //----------Step by step Perjalanan Kasomalang ke Rumah Sakit Ciereng Subang pakai angkot-------------------//
+                    angkotksm_rs_ciereng: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kasomalang ke Rumah Sakit Ciereng Subang menggunakan Angkutan Umum.'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/rs_ciereng.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/> <br><img src="img/angkot.png" id="gambarPng"><br><h6>Berjalan menuju Jalan raya <br>Menunggu dan naik Angkutan Umum berwarna biru-putih jurusan Subang-Tanjung Siang menuju Subang<br>Berhenti di Wisma Subang<br>Lalu berjalan ke arah kiri menuju Halte dekat GO(Ganesha Operation) <br>Menaiki Angkutan Umum berwarna hijau-oren jurusan Kalijati-Puwodadi menuju Rumah Sakit Ciereng<br>Dan sampailah di Rumah Sakit Ciereng Subang<br><br>Estimasi waktu    : 1 jam <br>Estimasi biaya   : Rp.20.000<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //----------Step by step Perjalanan Kasomalang ke Rumah Sakit Ciereng Subang pakai motor-------------------//
+                    mtrksm_rs_ciereng: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah step-by-step dari Kasomalang ke Rumah Sakit Ciereng Subang menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<img src="img/rs_ciereng.png" id="gambar">'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6><b>Langkah-langkah sampai tujuan<b/><h6/><img src="img/motor.png" id="gambarPng"><img src="img/mobil.png" id="gambarPng"><br><h6>Menuju Jalan raya <br>Belok ke arah kiri/kanan menuju Kasomalang <br>Ada 2 Jalur: Jalan Cagak dan Kumpay<br>Jika melewati jalur Jalan Cagak hanya lurus saja dan jika bertemu Tugu Nanas silahkan belok ke kanan ke arah Subang<br>Jika melewati Jalan Kumpay hanya belok kiri dan lurus saja sampai tiba di Sekolah As-Syifa Boarding School lalu belok kiri ke arah Subang<br>Lurus saja sampai di tiba di Wisma Subang<br>Lalu belok kiri dan lurus saja menuju Dangdeur<br>Jika ada pertigaan ke arah Dangdeur hanya lurus saja ke arah Kalijati<br>Lurus 30 meter dan sampai di Rumah Sakit Ciereng Subang<h6/>'
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Untuk lebih mudah silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Rsud+ciereng/@-6.5581409,107.7449493,17z/data=!3m1!4b1!4m5!3m4!1s0x2e693d7c4e6dae3d:0x8df809045e97aa89!8m2!3d-6.5581409!4d107.747138"> Arah ke Rumah Sakit Ciereng Subang <a/><h6/>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Kasomalang ke Rumah Sakit Ciereng Subang Kategori naik umum atau motor----------------------------//
+                    ksm_rs_ciereng: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtrksm'
+                                        },
+                                        {
+                                            text: 'Angkutan Umum',
+                                            value: 'angkotksm'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtrksm':
+                                                this.mtrksm_rs_ciereng();
+                                                break;
+                                            case 'angkotksm':
+                                                this.angkotksm_rs_ciereng();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+
+                    //---------- tempat user menuju ke Rumah Sakit Ciereng Subang-----------------------//
+                    rs_ciereng: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Dimana sekarang anda berada?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Kapuknahun',
+                                            value: 'kpn_rs_ciereng'
+                                        },
+                                        {
+                                            text: 'Gardusayang',
+                                            value: 'gardu_rs_ciereng'
+
+                                        },
+                                        {
+                                            text: 'Limaratus',
+                                            value: 'lima_rs_ciereng'
+
+                                        },
+                                        {
+                                            text: 'Kasomalang',
+                                            value: 'ksm_rs_ciereng'
+
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'kpn_rs_ciereng':
+                                                this.kpn_rs_ciereng();
+                                                break;
+                                            case 'gardu_rs_ciereng':
+                                                this.gardu_rs_ciereng();
+                                                break;
+                                            case 'lima_rs_ciereng':
+                                                this.lima_rs_ciereng();
+                                                break;
+                                            case 'ksm_rs_ciereng':
+                                                this.ksm_rs_ciereng();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+
+                    //------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+
                     //  Kategori -----------------------------------------------------------------// 
 
                     apotek: function () {
