@@ -30,17 +30,6 @@ body {
   transform: translate(-50%, 0);
 }
 
-#gambarPng2 {
-    width: 15%;
-    height: 15%;
-  
-  position: relative;
-  top: 50%;
-  left: 40%;
-  
-  transform: translate(-50%, 0);
-}
-
 #botui-app{
     position: fixed;
     display: flex;
@@ -100,6 +89,18 @@ body {
         margin: 0 auto;
         
     }
+    
+#gambarPng {
+    width: 15%;
+    height: 15%;
+  
+  position: relative;
+  top: 50%;
+  left: 40%;
+  
+  transform: translate(-50%, 0);
+}
+
   } 
 @media screen and (max-width: 425px) {
     .botui-container {
@@ -116,6 +117,18 @@ body {
         margin: 0 auto;
         
     }
+    
+#gambarPng {
+    width: 15%;
+    height: 15%;
+  
+  position: relative;
+  top: 50%;
+  left: 38%;
+  
+  transform: translate(-50%, 0);
+}
+
   }
 @media screen and (max-width: 375px) {
     .botui-container {
@@ -132,6 +145,18 @@ body {
         margin: 0 auto;
         
     }
+    
+#gambarPng {
+    width: 15%;
+    height: 15%;
+  
+  position: relative;
+  top: 50%;
+  left: 40%;
+  
+  transform: translate(-50%, 0);
+}
+
   }
 @media screen and (max-width: 320px) {
     .botui-container {
@@ -148,6 +173,20 @@ body {
         margin: 0 auto;
         
     }
+    
+#gambarPng {
+    width: 15%;
+    height: 15%;
+  
+  position: relative;
+  top: 50%;
+  left: 40%;
+  
+  transform: translate(-50%, 0);
+}
+
+
+
   }
 
 .botui-container{
