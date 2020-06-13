@@ -3358,6 +3358,85 @@
 
 
 
+
+                    //----------Step by step Perjalanan Zona lain ke Puskesmas cisalak pakai motor-------------------//
+                    mtr_pus_cisalak: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah link maps dari Luar Zona menuju Puskesmas Cisalak Lainnya menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Puskesmas+Cisalak/@-6.7163187,107.7633138,19z/data=!4m14!1m8!3m7!1s0x2e6926d552430535:0xa3f9d3e9ca531ee9!2sPuskesmas+Cisalak!8m2!3d-6.71632!4d107.763861!14m1!1BCgIgARICCAI!3m4!1s0x2e6926d552430535:0xa3f9d3e9ca531ee9!8m2!3d-6.71632!4d107.763861"> Arah Zona Lainnya ke Puskesmas Cisalak <a/><h6>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Luar Zona ke Puskesmas cisalak Kategori naik motor----------------------------//
+                    zona_pus_cisalak: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtr'
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtr':
+                                                this.mtr_pus_cisalak();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+
                     //---------- tempat user menuju ke Puskesmas cisalak-----------------------//
                     pus_cisalak: function () {
 
@@ -3392,6 +3471,11 @@
                                             value: 'ksm_pus_cisalak'
 
                                         },
+                                        {
+                                            text: 'Diluar Zona Lainnya',
+                                            value: 'zona'
+
+                                        },
                                     ]
 
                                 });
@@ -3419,6 +3503,9 @@
                                                 break;
                                             case 'ksm_pus_cisalak':
                                                 this.ksm_pus_cisalak();
+                                                break;
+                                            case 'zona':
+                                                this.zona_pus_cisalak();
                                                 break;
 
                                             default:
@@ -3949,6 +4036,85 @@
 
 
 
+
+                    //----------Step by step Perjalanan Zona lain ke Puskesmas Kasomalang pakai motor-------------------//
+                    mtr_pus_kasomalang: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah link maps dari Luar Zona menuju Puskesmas Kasomalang Lainnya menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Puskesmas+Kasomalang/@-6.6982318,107.7354144,17z/data=!4m12!1m6!3m5!1s0x2e692115249419d9:0xe592ff9a13bd8403!2sPuskesmas+Kasomalang!8m2!3d-6.6982318!4d107.7376031!3m4!1s0x2e692115249419d9:0xe592ff9a13bd8403!8m2!3d-6.6982318!4d107.7376031"> Arah Zona Lainnya ke Puskesmas Kasomalang <a/><h6>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Luar Zona ke Puskesmas Kasomalang Kategori naik motor----------------------------//
+                    zona_pus_kasomalang: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtr'
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtr':
+                                                this.mtr_pus_kasomalang();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+
                     //---------- tempat user menuju ke Puskesmas Kasomalang-----------------------//
                     pus_kasomalang: function () {
 
@@ -3983,6 +4149,11 @@
                                             value: 'ksm_pus_kasomalang'
 
                                         },
+                                        {
+                                            text: 'Diluar Zona Lainnya',
+                                            value: 'zona'
+
+                                        },
                                     ]
 
                                 });
@@ -4010,6 +4181,9 @@
                                                 break;
                                             case 'ksm_pus_kasomalang':
                                                 this.ksm_pus_kasomalang();
+                                                break;
+                                            case 'zona':
+                                                this.zona_pus_kasomalang();
                                                 break;
 
                                             default:
@@ -4542,6 +4716,85 @@
 
 
 
+
+                    //----------Step by step Perjalanan Zona lain ke Rumah Sakit Ciereng Subang pakai motor-------------------//
+                    mtr_rs_ciereng: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah link maps dari Luar Zona menuju Rumah Sakit Ciereng Subang Lainnya menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/Rsud+ciereng/@-6.5581409,107.7449493,17z/data=!3m1!4b1!4m5!3m4!1s0x2e693d7c4e6dae3d:0x8df809045e97aa89!8m2!3d-6.5581409!4d107.747138"> Arah Zona Lainnya ke Rumah Sakit Ciereng Subang <a/><h6>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Luar Zona ke Rumah Sakit Ciereng Subang Kategori naik motor----------------------------//
+                    zona_rs_ciereng: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtr'
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtr':
+                                                this.mtr_rs_ciereng();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+
                     //---------- tempat user menuju ke Rumah Sakit Ciereng Subang-----------------------//
                     rs_ciereng: function () {
 
@@ -4576,6 +4829,11 @@
                                             value: 'ksm_rs_ciereng'
 
                                         },
+                                        {
+                                            text: 'Diluar Zona Lainnya',
+                                            value: 'zona'
+
+                                        },
                                     ]
 
                                 });
@@ -4603,6 +4861,9 @@
                                                 break;
                                             case 'ksm_rs_ciereng':
                                                 this.ksm_rs_ciereng();
+                                                break;
+                                            case 'zona':
+                                                this.zona_rs_ciereng();
                                                 break;
 
                                             default:
@@ -5132,6 +5393,85 @@
 
 
 
+
+                    //----------Step by step Perjalanan Zona lain ke Rumah Sakit PTPN  Subang pakai motor-------------------//
+                    mtr_rs_ptpn: function () {
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Ini adalah link maps dari Luar Zona menuju Rumah Sakit PTPN Subang Lainnya menggunakan Motor/Mobil. '
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            type: 'html',
+                            content: '<h6>Silahkan klik link berikut. <br> <a href="https://www.google.com/maps/place/PT+Perkebunan+Nusantara+VIII+(Persero)+Rumah+Sakit/@-6.5681589,107.7605098,17z/data=!3m1!4b1!4m5!3m4!1s0x2e693c9de0de921d:0x9e81f06497c777b!8m2!3d-6.5681589!4d107.7626985"> Arah Zona Lainnya ke Rumah Sakit PTPN Subang <a/><h6>'
+
+                        })
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Terima Kasih sudah menggunakan layanan gratis kami. <br> Dukung kami untuk membantu masyarakat dalam menjaga kesehatan. Mari kita lawan COVID-19. :)'
+
+                        })
+
+
+                    },
+
+                    //-------------- Luar Zona ke Rumah Sakit PTPN Subang Kategori naik motor----------------------------//
+                    zona_rs_ptpn: function () {
+
+                        this.botui.message.add({
+                            delay: 200,
+                            loading: true,
+                            content: 'Mau naik apa anda hari ini?'
+
+                        })
+
+                            .then(() => {
+                                return this.botui.action.button({
+
+                                    delay: 1000,
+                                    action: [
+                                        {
+                                            text: 'Motor/Mobil',
+                                            value: 'mtr'
+                                        },
+                                    ]
+
+                                });
+                            })
+
+                            .then(res => {
+                                this.botui.message
+                                    .bot({
+                                        delay: 200,
+                                        loading: true
+                                    })
+
+                                    .then(index => {
+                                        this.loadingIndex = index;
+
+                                        switch (res.value) {
+                                            case 'mtr':
+                                                this.mtr_rs_ptpn();
+                                                break;
+
+                                            default:
+
+                                        }
+                                    });
+
+                            });
+
+
+
+
+                    },
+
+
+
                     //---------- tempat user menuju ke Rumah Sakit PTPN Subang-----------------------//
                     rs_ptpn: function () {
 
@@ -5166,6 +5506,11 @@
                                             value: 'ksm_rs_ptpn'
 
                                         },
+                                        {
+                                            text: 'Diluar Zona Lainnya',
+                                            value: 'zona'
+
+                                        },
                                     ]
 
                                 });
@@ -5193,6 +5538,9 @@
                                                 break;
                                             case 'ksm_rs_ptpn':
                                                 this.ksm_rs_ptpn();
+                                                break;
+                                            case 'zona':
+                                                this.zona_rs_ptpn();
                                                 break;
 
                                             default:
