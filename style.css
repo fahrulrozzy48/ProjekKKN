@@ -54,7 +54,7 @@ body {
 
 .judul h2{
     color: white;
-    font-size: 45px;
+    font-size: 40px;
     margin: 150px 80px 0 80px;
 }
 .judul p{
@@ -84,6 +84,107 @@ body {
     
 }
 
+
+@media screen and (max-width: 1440px) {
+    .botui-container {
+        font-size: 10px;
+        background-color: black;
+        font-family: font-family;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+    }
+    .botui-app-container {
+        float: right;
+        width: 50%;
+        height: 100%;
+        margin: 0 auto;
+        
+    }
+    
+    .judul h2{
+        color: white;
+        font-size: 40px;
+        margin: 150px 50px 0 80px;
+    }
+    .judul p{
+        color: white;
+        font-size: 18px;
+        margin: 0px 80px;
+    }
+    
+#gambarPng {
+    width: 15%;
+    height: 15%;
+  
+  position: relative;
+  top: 50%;
+  left: 43%;
+  
+  transform: translate(-50%, 0);
+}
+
+#gambarPngE {
+    width: 15%;
+    height: 15%;
+  
+  position: relative;
+  top: 50%;
+  left: 50%;
+  
+  transform: translate(-50%, 0);
+}
+  } 
+
+
+@media screen and (max-width: 1024px) {
+    .botui-container {
+        font-size: 10px;
+        background-color: black;
+        font-family: font-family;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 15px;
+    }
+    .botui-app-container {
+        float: right;
+        width: 50%;
+        height: 100%;
+        margin: 0 auto;
+        
+    }
+    
+    .judul h2{
+        color: white;
+        font-size: 30px;
+        margin: 150px 50px 0 40px;
+    }
+    .judul p{
+        color: white;
+        font-size: 14px;
+        margin: 0px 40px;
+    }
+    
+#gambarPng {
+    width: 15%;
+    height: 15%;
+  
+  position: relative;
+  top: 50%;
+  left: 43%;
+  
+  transform: translate(-50%, 0);
+}
+
+#gambarPngE {
+    width: 15%;
+    height: 15%;
+  
+  position: relative;
+  top: 50%;
+  left: 50%;
+  
+  transform: translate(-50%, 0);
+}
+  } 
 
 @media screen and (max-width: 768px) {
     .botui-container {
